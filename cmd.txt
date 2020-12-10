@@ -1,8 +1,8 @@
-docker build --tag node-serverless:1.1 .
+docker build -t node-serverless:1.2 -t node-serverless:latest .
 docker run --detach --name node-serverless node-serverless:1.0
 docker exec -it node-serverless bash
 
-docker tag node-serverless:1.1 knight1988/node-serverless:1.1
-docker push knight1988/node-serverless:1.1
+docker push knight1988/node-serverless:1.2
+docker push knight1988/node-serverless:latest
 
 docker rm --force node-serverless
