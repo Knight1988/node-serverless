@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:16
 
 ENV NODE_OPTIONS="--max_old_space_size=4096"
 
@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 # Install serverless and Angular CLI
 RUN yarn global add serverless && \
-    yarn global add @angular/cli@12.0.0
+    yarn global add @angular/cli@16.0.0
 
 # Install AWS CLI
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
