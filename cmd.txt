@@ -1,8 +1,0 @@
-docker build -t knight1988/node-serverless:1.0.1 -t knight1988/node-serverless:latest .
-docker run --detach --name node-serverless node-serverless:1.0
-docker exec -it node-serverless bash
-
-docker push knight1988/node-serverless:1.0.1
-docker push knight1988/node-serverless:latest
-
-docker rm --force node-serverless
