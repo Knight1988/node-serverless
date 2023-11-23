@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-        docker_layer_caching: true
+          docker_layer_caching: true
       - run:
           name: Build Docker image
           command: docker build -t knight1988/node-serverless:latest .
