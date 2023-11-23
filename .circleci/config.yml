@@ -36,7 +36,10 @@ jobs:
           command: |
             TAG=$(echo $CIRCLE_BRANCH | sed 's/^release\///')
             echo "Release version: $TAG"
-            docker build -t knight1988/node-serverless:$TAG .
+            echo "export TAG=$TAG" >> $BASH_ENV
+      - run:
+          name: Build Docker image
+          command: docker build -t knight1988/node-serverless:$TAG .      
       - run:
           name: Login
           command: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
