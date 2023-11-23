@@ -1,11 +1,12 @@
-FROM node:16
+FROM node:18
 
 ENV NODE_OPTIONS="--max_old_space_size=4096"
 
 # Install Python and required dependencies
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
-    pip3 install --no-cache-dir --upgrade pip && \
+    apt-get install -y python3 python3-pip
+RUN rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+RUN pip3 install --no-cache-dir --upgrade pip && \
     rm -rf /var/lib/apt/lists/*
 
 # Install serverless and Angular CLI
